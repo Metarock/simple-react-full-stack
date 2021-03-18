@@ -38,12 +38,13 @@ jobs:
         with:
           eslint: true
           auto-fix: true
-          continue-on-error: true
+          continue-on-error: false
           
       - name: Merge branch
         uses: devmasx/merge-branch@v1.3.1
         with:
           label_name: 'merge to master' 
-          github_token: ${{ github.token}}
+        env: 
+          GITHUB_TOKEN: ${{ github.token}}
 
 
